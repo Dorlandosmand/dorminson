@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorminson</title>
+    <style>
+        /* Estilo del cuerpo de la página */
+        body {
+            background-color: #f5f5dc; /* Color beige claro */
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Estilos para el contenedor de logo y h1 */
+        #logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        /* Estilos para el logo */
+        #Logo {
+            margin-top: 20px;
+        }
+
+        /* Ocultar logo cuando el menú está abierto */
+        #logo-section.hide-logo #Logo {
+            display: none;
+        }
+
+        /* Estilos para el h1 */
+        #xd {
+            margin-top: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            color: #5b3a29; /* Marrón oscuro */
+            text-align: center;
+        }
+
+        /* Estilos para el menú */
+        #menu-items {
+            display: none;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        /* Mostrar el menú cuando el contenedor principal tenga la clase 'open' */
+        #main-nav.open #menu-items {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Estilo para el botón del menú */
+        #menu-toggle-btn {
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #7c5c45; /* Color marrón medio */
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: none;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para los elementos del menú */
+        #menu-items li {
+            margin: 10px 0;
+        }
+
+        /* Estilo para los enlaces del menú */
+        #menu-items li a {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #9e7b5b; /* Color marrón claro */
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #5b3a29; /* Color marrón oscuro */
+        }
+
+        /* Estilo de hover para los enlaces */
+        #menu-items li a:hover {
+            background-color: #8c6b4f; /* Color marrón más fuerte para hover */
+        }
+
+        /* Estilo para el párrafo */
+        #a {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            color: #5b3a29; /* Marrón oscuro */
+            background-color: #e8dcb3; /* Beige claro */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            margin: 20px auto; /* Centrado */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <section id="logo-section">
+        <img id="Logo" src="img/dorminson.png" alt="consultorio">
+        <h1 id="xd">Bienvenido al Dorminson</h1>
+
+        <nav id="main-nav">
+            <div id="menu-toggle-btn">Menú</div> <!-- Botón para mostrar el menú -->
+            <ul id="menu-items">
+                <li><a href="cliente.php">cliente</a></li>
+                <li><a href="choferes.php">choferes</a></li>
+                <li><a href="autos.php">Automoviles</a></li>
+                <li><a href="articulos.php">Articulos</a></li>
+                <li><a href="envio.php">Envios</a></li>
+                <li><a href="nota.php">Notas</a></li>
+                <li><a href="vista.php">Vistas</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <main>
+        <p id="a">Esta página está diseñada para la gestión de datos importantes de la constructora Dorminson</p>
+    </main>
+
+    <script>
+        // Obtener el botón, el contenedor del menú y el contenedor del logo
+        const menuToggleBtn = document.getElementById('menu-toggle-btn');
+        const mainNav = document.getElementById('main-nav');
+        const logoSection = document.getElementById('logo-section');
+
+        // Evento de clic para mostrar/ocultar el menú y ocultar el logo
+        menuToggleBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('open'); // Alternar la clase 'open' para el menú
+            logoSection.classList.toggle('hide-logo'); // Alternar la clase 'hide-logo' para ocultar el logo
+        });
+    </script>
+</body>
+</html>
